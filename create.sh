@@ -9,6 +9,8 @@ elif [[]]; then
 else
 	mkdir $1
 	echo 'ok: user created!'
+ 	> wall.txt
+  	> friends.txt
 fi
 
 
