@@ -3,14 +3,14 @@
 if [[$# -eq 0]]; then
 	echo 'nok: no idetifier provided'
 
-elif [[]]; then
+elif [[ls -d | == $1]]; then
 	echo 'nok: user already exists'
 
 else
 	mkdir $1
 	echo 'ok: user created!'
- 	> wall.txt
-  	> friends.txt
+ 	> "$1"/wall.txt
+  	> "$1"/friends.txt
 fi
 
 
