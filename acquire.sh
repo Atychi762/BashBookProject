@@ -1,6 +1,6 @@
 #! /bin/bash
 
-if [ -z "S1" ]: then
+if [ -z "$1" ]: then
 	echo "Usage $0 mutex-name" >&1
 	exit 1
 else
