@@ -2,9 +2,9 @@
 
 
 # check if the first id exists
-if [ -d $1  2> /dev/null ]; then
+if [ -d $1 ]; then
 	# check if the second id exists
-	if [ -d $2  2> /dev/null ]; then
+	if [ -d $2 ]; then
 		# if both ids exist check if they are already friends
 		if ! grep "$2" "$1"/friends.txt 2> /dev/null; then
 			# if they are not friends then add the second user id to the first users friend file
