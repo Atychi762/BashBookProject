@@ -15,9 +15,12 @@ else
 		fi
 	done
 	mkdir $1
-	echo 'ok: user created!'
+	if [ $? == 0 ]; then 
+		echo 'ok: user created!' 
+	fi
  	> "$1"/wall.txt
   	> "$1"/friends.txt
+
 fi
 
 
