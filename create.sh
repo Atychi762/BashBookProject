@@ -1,7 +1,7 @@
 #! /bin/bash
 
 if [ $# -eq 0 ]; then
-	echo 'nok: no idetifier provided'
+	echo 'nok: no identifier provided'
 
 else
 	if mkdir $1 2>/dev/null; then
