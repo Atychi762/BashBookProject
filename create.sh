@@ -14,14 +14,12 @@ else
 			continue
 		fi
 	done
-	mkdir $1
-	if [ $? == 0 ]; then 
-		echo 'ok: user created!' 
+	if mkdir $1 > /dev/null; then
+		if [ $? == 0 ]; then 
+			echo 'ok: user created!' 
+		fi
+ 		> "$1"/wall.txt
+  		> "$1"/friends.txt
 	fi
- 	> "$1"/wall.txt
-  	> "$1"/friends.txt
 
 fi
-
-
-
