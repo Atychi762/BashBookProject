@@ -4,17 +4,20 @@ if [[$# -eq 0]]; then
 	echo 'nok: no idetifier provided'
 
 else
-	for item in ${ls -d}; 
+	for item in { $( ls -d ) }; 
 	do
-		if [item -eq $1]; then 
-			echo "Sorry username already taken. Please pick another username"
+		
+		if [ $item = "$1/" ]; then 
+			echo "nok: user already exists"
+			return 1
 		else
-			mkdir $1
-			echo 'ok: user created!'
- 			> "$1"/wall.txt
-  			> "$1"/friends.txt
+			continue
 		fi
 	done
+	mkdir $1
+	echo 'ok: user created!'
+ 	> "$1"/wall.txt
+  	> "$1"/friends.txt
 fi
 
 
