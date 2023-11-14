@@ -1,21 +1,23 @@
 #! /bin/bash
 
-while [0 = 0]
+while [ 0=0 ]
 do 
+    read inpt1 inpt2 inpt3
     case $1 in
         create)
-            #do something
+            bash ./create.sh $2
             ;;
         add)
-            #do something
+            bash ./add_friend.sh $2 $3
             ;;
         post)
-            #do something
+            bash ./post_messages.sh $2 $3 $4 
             ;;
         display)
-            #do something
+            bash ./display_wall.sh $2
             ;;
         *)
             echo "Accepted Commands: {create|add|post|display}"
-
+            exit 1
+    esac
 done
