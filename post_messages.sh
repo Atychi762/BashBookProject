@@ -5,7 +5,7 @@ if [ -d $1 ]; then
 	# check if the receiver id exists
 	if [ -d $2 ]; then
 		# if both ids exist check if they are friends
-		if grep "$1" "$2"/friends.txt 2> /dev/null; then
+		if grep "$1" "$2"/friends.txt 1> /dev/null 2> /dev/null; then
 			# if they are friends then add the message to the receivers wall file
 			echo ""$1": "$3"" >> "$2"/wall.txt
 			echo 'ok message posted'
