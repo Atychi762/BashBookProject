@@ -1,9 +1,11 @@
 #! /bin/bash
 
-if [ -d $1 ]; then
+userId=$1
+
+if [ -d $userId ]; then
     echo "start of file"
-    cat "$1"/wall.txt
+    cat "$userId"/wall.txt
     echo "end of file"
 else
-    echo nok: user "$1" does not exist
+    echo nok: user "$userId" does not exist
 fi    
