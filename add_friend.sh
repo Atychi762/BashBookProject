@@ -1,6 +1,6 @@
 #! /bin/bash
 
-
+ 
 # check if the first id exists
 if [ -d $1 ]; then
 	# check if the second id exists
