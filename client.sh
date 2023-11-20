@@ -1,6 +1,6 @@
 #! /bin/bash
-mkfifo "$1"_pipe
+mkfifo ""$1"_pipe"
 read inpt > server_pipe
-
-fclose("$1"_pipe)
+echo < ""$1"_pipe"
+fclose( ""$1"_pipe" )
 
