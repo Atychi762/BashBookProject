@@ -5,19 +5,26 @@ while [ 0=0 ]
 do 
     IFS=" " read -ra inpt_array < server_pipe 
     userId=${inpt_array[0]}
-
+    echo ${inpt_array[@]}
     case ${inpt_array[1]} in
         create)
             bash ./create.sh ${inpt_array[2]} > ""$userId"_pipe"
             ;;
         add)
-            bash ./add_friend.sh "$inpt_array[2]" "$inpt_array[3]" > ""$userId"_pipe"
+            bash ./add_friend.sh ${inpt_array[2]} ${inpt_array[3]} > ""$userId"_pipe"
             ;;
         post)
-            bash ./post_messages.sh "$inpt_array[2]" "$inpt_array[3]" "$inpt_array[4]" > ""$userId"_pipe"
+            counter=4
+            declare -i counter
+            postString=""
+            while [ $counter -lt ${#inpt_array[@]} ]; do
+                postString+=${inpt_array[counter]}
+                counter+=1
+            done    
+            bash ./post_messages.sh ${inpt_array[2]} ${inpt_array[3]} $postString > ""$userId"_pipe"
             ;;
         display)
-            bash ./display_wall.sh "$inpt_array[2]" > ""$userId"_pipe"
+            bash ./display_wall.sh ${inpt_array[2]} > ""$userId"_pipe"
             ;;
         *)
             echo "Accepted Commands: create, add, post, display" > ""$userId"_pipe"

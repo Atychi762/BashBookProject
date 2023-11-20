@@ -7,7 +7,8 @@ else
     while [ 0 = 0 ]; do
         IFS=" " read -ra inpt_array
         if [ ${#inpt_array[@]} -ge 2 ]; then
-            echo ""$1 " + "${inpt_array[@]}"" > server_pipe
+            echo ""$1 " "${inpt_array[@]}""
+            echo ""$1 " "${inpt_array[@]}"" > server_pipe
 
         else 
             echo "hi"
