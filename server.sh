@@ -3,7 +3,8 @@
 mkfifo server_pipe
 while [ 0=0 ]
 do 
-    read args < server_pipe | cut -d " " > argsfile.txt
+    read args < server_pipe | cut -c " " > argsfile.txt
+
     case "" in
         create)
             bash ./create.sh ""
