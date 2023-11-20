@@ -3,19 +3,19 @@
 mkfifo server_pipe
 while [ 0=0 ]
 do 
-    read -a argsArray < server_pipe
-    case "$argsArray[0]" in
+    read args < server_pipe | cut -d " " > argsfile.txt
+    case "" in
         create)
-            bash ./create.sh "$argsArray[1]"
+            bash ./create.sh ""
             ;;
         add)
-            bash ./add_friend.sh "$argsArray[1]" "$argsArray[2]"
+            bash ./add_friend.sh "" ""
             ;;
         post)
-            bash ./post_messages.sh "$argsArray[1]" "$argsArray[2]" "$argsArray[3]"
+            bash ./post_messages.sh "" "" ""
             ;;
         display)
-            bash ./display_wall.sh "$argsArray[1]"
+            bash ./display_wall.sh ""
             ;;
         *)
             echo "Accepted Commands: {create|add|post|display}"
