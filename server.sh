@@ -17,11 +17,14 @@ do
             counter=4
             declare -i counter
             postString=""
-            while [ $counter -lt ${#inpt_array[@]} ]; do
+            spacechar=" "
+            while [ $counter -le ${#inpt_array[@]} ]; do
                 postString+=${inpt_array[counter]}
+                postString+=$spacechar
+                echo $postString
                 counter+=1
             done    
-            bash ./post_messages.sh ${inpt_array[2]} ${inpt_array[3]} $postString > ""$userId"_pipe"
+            bash ./post_messages.sh ${inpt_array[2]} ${inpt_array[3]} "$postString" > ""$userId"_pipe"
             ;;
         display)
             bash ./display_wall.sh ${inpt_array[2]} > ""$userId"_pipe"
