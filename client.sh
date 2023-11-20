@@ -6,9 +6,11 @@ else
     mkfifo ""$1"_pipe"
     while [ 0 = 0 ]; do
         IFS=" " read -ra inpt_array
-        for element in "${inpt_array[@]}"; do
-            echo "$element"
-        done
+        if [ ${#inpt_array[@]} -ge 2 ]
+            echo ""$1" + "$inpt_array[@]"" > server_pipe
+        else
+            echo "sorry not enough arguments!"
+        fi
     done
     rm ""$1"_pipe"
 fi
