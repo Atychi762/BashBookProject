@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# adding the arguments to variables for better readability
 sender=$1
 receiver=$2
 message=$3
