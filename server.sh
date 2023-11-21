@@ -8,9 +8,11 @@ do
     echo ${inpt_array[@]}
     case ${inpt_array[1]} in
         create)
+            sleep 10
             bash ./create.sh ${inpt_array[2]} > ""$userId"_pipe"
             ;;
         add)
+            sleep 10
             bash ./add_friend.sh ${inpt_array[2]} ${inpt_array[3]} > ""$userId"_pipe"
             ;;
         post)
@@ -22,11 +24,12 @@ do
                 postString+=${inpt_array[counter]}
                 postString+=$spacechar
                 counter+=1
-            done    
+            done  
+            sleep 10  
             bash ./post_messages.sh ${inpt_array[2]} ${inpt_array[3]} "$postString" > ""$userId"_pipe"
             ;;
         display)
-            
+            sleep 10
             > bash ./display_wall.sh ${inpt_array[2]} > ""$userId"_pipe"
             ;;
         *)
