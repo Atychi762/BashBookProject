@@ -12,6 +12,9 @@ if [ -d $id ]; then
 			# if they are not friends then add the second user id to the first users friend file
 			echo "$friend" >> $userId/friends.txt
 			echo 'ok friend added'
+
+		else
+			echo nok: user "$userId" does not exist
 		fi
 	else 
 		# eror sent when user 2 does not exist

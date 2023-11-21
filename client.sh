@@ -12,8 +12,12 @@ else
         else 
             echo "sorry not enough arguments."
         fi
-        read response < ""$1"_pipe"
-        echo $response
+        #read response < ""$1"_pipe"
+        while read response;
+        do
+            echo -e $response
+        done < ""$1"_pipe"
+        
     done
     rm ""$1"_pipe"
 fi
