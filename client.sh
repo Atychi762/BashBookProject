@@ -10,7 +10,7 @@ else
             echo ""$1 " "${inpt_array[@]}"" > server_pipe
 
         else 
-            echo "hi"
+            echo "sorry not enough arguments."
         fi
         read response < ""$1"_pipe"
         echo $response

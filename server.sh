@@ -27,7 +27,6 @@ do
             ;;
         display)
             
-            cat <<EOF
             > bash ./display_wall.sh ${inpt_array[2]} > ""$userId"_pipe"
             ;;
         *)
