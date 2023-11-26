@@ -6,7 +6,7 @@ Diarmaid McKeagney
 
 To run the project, first open the project file and right click. You should see the option to "Open in Terminal".
 
-<img src="/docs_file/opening_terminal_cropped.png" alt="Opening the terminal"/>
+<img src="/docs_file_including_report_and_readme/opening_terminal_cropped.png" alt="Opening the terminal"/>
 
 You should do this twice as you will need to run the client and server script.
 In the first terminal you will need to type:
