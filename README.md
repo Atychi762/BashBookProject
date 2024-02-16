@@ -1,1 +1,3 @@
 This project is a facebook-like server-client application. A user can create an account, post meesages to other users walls, add friends, and display the contents of their own wall. It is written exclusivly in bash. This project was a collaboration between myself (Diarmaid McKeagney) and Peter Fitzgerald. This project was completed for CT213.
+
+To run this application, open a linux operating system, download and extract the zip file from GitHub, then navigate to the project folder. Open the terminal in the project directory. Type:```./server.sh``` to run the server script. Open a second terminal in the project directory and type: ```./client.sh``` to run the client script. You can run as many client scripts as you like simultaniously. They all connect to the same server.
