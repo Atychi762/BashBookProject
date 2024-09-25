@@ -7,7 +7,7 @@ else
 	friend=$2
 
 	# check if the first id exists as a directory
-	if [ -d $id ]; then
+	if [ -d $userId ]; then
 		# check if the second id existss as a directory
 		if [ -d $friend ]; then
 			# if both ids exist check if they are already friends
