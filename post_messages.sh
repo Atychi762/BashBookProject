@@ -8,7 +8,7 @@ message=$3
 # check if the sender id exists
 if [ -d $sender ]; then
 	# check if the receiver id exists
-	if [ -d $2 ]; then
+	if [ -d $receiver ]; then
 		# if both ids exist check if they are friends
 		if grep "$sender" "$receiver"/friends.txt 1> /dev/null 2> /dev/null; then
 			# if they are friends then add the message to the receivers wall file
